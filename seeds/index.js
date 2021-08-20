@@ -23,13 +23,22 @@ const seedDB = async () => {
       const random1000 = Math.floor(Math.random() * 1000);
       const price = Math.floor(Math.random() * 20) + 10;
       const camp = new Campground({
-         author: '610f1e25eb4ebd3becdbb0f1',
+         author: '611c349dbef9517ad8d8f72e',
          location: `${cities[random1000].city}, ${cities[random1000].state}`,
          title: `${sample(descriptors)} ${sample(places)}`,
-         image: 'https://source.unsplash.com/collection/20431456',
          description:
             "It's always good to bring a slower friend with you on a hike. If you happen to come across bears, the whole group doesn't have to worry. Only the slowest in the group do. That was the lesson they were about to learn that day.",
-         price: price
+         price: price,
+         images: [
+            {
+               url: 'https://res.cloudinary.com/dg9aehsyd/image/upload/v1629489000/YelpCamp/tud3mcq1ug2gnjfqlv36.jpg',
+               filename: 'YelpCamp/tud3mcq1ug2gnjfqlv36'
+            },
+            {
+               url: 'https://res.cloudinary.com/dg9aehsyd/image/upload/v1629489001/YelpCamp/xcwixbpcufdmo1vzixhm.jpg',
+               filename: 'YelpCamp/xcwixbpcufdmo1vzixhm'
+            }
+         ]
       });
       await camp.save();
    }
