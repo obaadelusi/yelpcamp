@@ -79,6 +79,8 @@
    </div>
 
    <div class="col-md-6">
+      <!-- Map Box -->
+      <div class="mb-3" id="map" style="width: 100%; height: 400px"></div>
       <!-- Review form -->
       <% if(currentUser) {%>
       <h3>Leave a Review</h3>
@@ -177,3 +179,9 @@
       <% } %>
    </div>
 </div>
+
+<script>
+   const mapToken = '<%-process.env.MAPBOX_TOKEN%>';
+   const campground = <%-JSON.stringify(campground)%>;
+</script>
+<script src="/javascript/showPageMap.js"></script>
