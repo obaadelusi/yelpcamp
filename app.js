@@ -167,6 +167,7 @@ app.use((err, req, res, next) => {
    res.status(statusCode).render('error', { err });
 });
 
-app.listen(9090, () => {
-   console.log('Listening on http://localhost:9090');
+const port = process.env.PORT || 9090;
+app.listen(port, () => {
+   console.log(`Serving on http://localhost:${port}`);
 });
